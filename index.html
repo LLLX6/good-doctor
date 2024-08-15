@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طبيبك النفسي المساعد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(to right, #d7e1ec, #eef3f7);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 0 0 10px 10px;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 48px; /* Very large and attractive font size */
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adding shadow for a fancier look */
+        }
+        header p {
+            font-size: 22px;
+            margin: 5px 0;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        input[type="text"], select, textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px auto;
+            text-align: center;
+        }
+        input[type="text"], textarea {
+            font-size: 16px;
+            border-radius: 8px; /* Adjusted border radius for smaller corners */
+        }
+        select {
+            font-size: 18px;
+            border-radius: 8px; /* Adjusted border radius for smaller corners */
+        }
+        button {
+            background-color: #4CAF50; /* لون خلفية الزر */
+            color: white;
+            border: none;
+            padding: 15px 30px; /* حجم الزر */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px; /* حجم النص */
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 50px; /* جعل الزر دائري الحواف */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل */
+            transition: background-color 0.3s, box-shadow 0.3s; /* تأثير التغيير */
+        }
+        button:hover {
+            background-color: #45a049; /* لون خلفية الزر عند التمرير */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* تأثير ظل الزر عند التمرير */
+        }
+        a.button {
+            background-color: #E1306C; /* Instagram color */
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            padding: 15px; /* Adjusted padding */
+            border-radius: 25px; /* Rounded corners */
+        }
+        a.button i {
+            margin-right: 8px;
+        }
+        a.button:hover {
+            background-color: #C13584; /* Darker Instagram color on hover */
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            font-size: 10px;
+        }
+        .divider {
+            width: 50%;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px auto;
+        }
+        .service-option {
+            color: #4CAF50;
+        }
+        .free-option {
+            color: gray;
+        }
+        #closing p {
+            color: #4CAF50;
+            font-size: 12px;
+        }
+        #closing h2 {
+            color: #2E7D32;
+        }
+        .icon {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+        .review {
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 80%;
+            max-width: 600px;
+        }
+        label {
+            color: #4CAF50;
+        }
+        textarea {
+            font-size: 14px;
+            height: 30px; /* Reduced height */
+            resize: none;
+            border-radius: 8px; /* Adjusted border radius for smaller corners */
+        }
+        #name {
+            font-size: 18px;
+            border-radius: 8px; /* Adjusted border radius for smaller corners */
+        }
+        .stars {
+            font-size: 24px; /* Increased size for stars */
+            color: gold;
+            margin: 20px 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            section {
+                width: 90%;
+            }
+            input[type="text"], select, textarea {
+                max-width: 100%;
+            }
+            header h1 {
+                font-size: 36px; /* Adjusted for smaller screens */
+            }
+            header p {
+                font-size: 18px; /* Adjusted for smaller screens */
+            }
+            footer p {
+                font-size: 8px; /* Adjusted for smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 28px; /* Further adjusted for very small screens */
+            }
+            header p {
+                font-size: 16px; /* Further adjusted for very small screens */
+            }
+            input[type="text"], textarea, select {
+                font-size: 14px; /* Smaller font size for small screens */
+                border-radius: 6px; /* Smaller border radius for small screens */
+            }
+            button {
+                font-size: 18px; /* Smaller font size for small screens */
+                padding: 12px; /* Smaller padding for small screens */
+            }
+            .divider {
+                width: 80%; /* Wider divider for small screens */
+            }
+            footer p {
+                font-size: 6px; /* Further adjusted for very small screens */
+            }
+        }
+    </style>
+    <script>
+        function copySurvey() {
+            const surveyText = `
+                ما هو شعورك الآن؟: ${document.getElementById('feeling').value}
+                كيف تصف مستوى الطاقة لديك في الأيام الأخيرة؟: ${document.getElementById('energy').value}
+                كيف تؤثر مشاعرك الحالية على قدرتك على أداء المهام اليومية؟: ${document.getElementById('effect').value}
+                ما مدى تكرار مشاعر القلق لديك في الأسبوع الماضي؟: ${document.getElementById('anxiety').value}
+                كيف تقيم مستوى دعمك الاجتماعي حاليًا؟: ${document.getElementById('support').value}
+                متى بدأت تشعر بأنك أقل سعادة أو استقرارًا من المعتاد؟: ${document.getElementById('happiness').value}
+                كيف تتعامل مع الضغوطات اليومية؟: ${document.getElementById('stress').value}
+                هل لديك أفكار متكررة حول عدم جدوى حياتك؟: ${document.getElementById('worthless').value}
+                كيف تشعر حيال العلاقات الاجتماعية والاتصالات مع الآخرين؟: ${document.getElementById('relationships').value}
+                كيف تصف نومك في الفترة الأخيرة؟: ${document.getElementById('sleep').value}
+                ما مدى رضاك عن حياتك بشكل عام حاليًا؟: ${document.getElementById('satisfaction').value}
+                مرحبا أنا : ${document.getElementById('note').value}
+            `;
+            navigator.clipboard.writeText(surveyText).then(() => {
+                alert('إرسال الاستبيان في محادثة الانستجرام!');
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>طبيبك النفسي المساعد</h1>
+        <p> نسعى إلى فهم العقل البشري وتقديم العناية من خلال الدعم المعنوي والعاطفي، وإذا إعتنيت بهذا الجانب سوف تتمكن من إستعادة توازنك النفسي</p>
+    </header>
+    <section>
+        <h2>استبيان الشعور والحالة النفسية</h2>
+        <p>من فضلك قم بملء الاستبيان أدناه لتساعدنا في تقديم الدعم الأفضل:</p>
+        <label for="feeling">ما هو شعورك الآن؟</label>
+        <input type="text" id="feeling" name="feeling" placeholder="فضفض هنا">
+        <label for="energy">كيف تصف مستوى الطاقة لديك في الأيام الأخيرة؟</label>
+        <select id="energy" name="energy">
+            <option value="مرتفع">مرتفع</option>
+            <option value="معتدل">معتدل</option>
+            <option value="منخفض">منخفض</option>
+            <option value="متغير">متغير</option>
+        </select>
+        <label for="effect">كيف تؤثر مشاعرك الحالية على قدرتك على أداء المهام اليومية؟</label>
+        <select id="effect" name="effect">
+            <option value="بشكل إيجابي">بشكل إيجابي</option>
+            <option value="ليس لها تأثير">ليس لها تأثير</option>
+            <option value="بشكل سلبي">بشكل سلبي</option>
+            <option value="تجعلني أشعر بالإرهاق">تجعلني أشعر بالإرهاق</option>
+        </select>
+        <label for="anxiety">ما مدى تكرار مشاعر القلق لديك في الأسبوع الماضي؟</label>
+        <select id="anxiety" name="anxiety">
+            <option value="نادرا جدا">نادرا جدا</option>
+            <option value="أحيانا">أحيانا</option>
+            <option value="كثيرا">كثيرا</option>
+            <option value="دائما">دائما</option>
+        </select>
+        <label for="support">كيف تقيم مستوى دعمك الاجتماعي حاليًا؟</label>
+        <select id="support" name="support">
+            <option value="ممتاز">ممتاز</option>
+            <option value="جيد">جيد</option>
+            <option value="متوسط">متوسط</option>
+            <option value="ضعيف">ضعيف</option>
+        </select>
+        <label for="happiness">متى بدأت تشعر بأنك أقل سعادة أو استقرارًا من المعتاد؟</label>
+        <select id="happiness" name="happiness">
+            <option value="خلال الأسابيع الماضية">خلال الأسابيع الماضية</option>
+            <option value="خلال الأشهر الماضية">خلال الأشهر الماضية</option>
+            <option value="منذ أكثر من عام">منذ أكثر من عام</option>
+            <option value="ليس لدي أي تغير ملحوظ">ليس لدي أي تغير ملحوظ</option>
+        </select>
+        <label for="stress">كيف تتعامل مع الضغوطات اليومية؟</label>
+        <select id="stress" name="stress">
+            <option value="أستطيع التعامل معها بشكل جيد">أستطيع التعامل معها بشكل جيد</option>
+            <option value="أحيانا أجد صعوبة في التعامل معها">أحيانا أجد صعوبة في التعامل معها</option>
+            <option value="غالبا ما أجد صعوبة في التعامل معها">غالبا ما أجد صعوبة في التعامل معها</option>
+            <option value="لا أستطيع التعامل معها">لا أستطيع التعامل معها</option>
+        </select>
+        <label for="worthless">هل لديك أفكار متكررة حول عدم جدوى حياتك؟</label>
+        <select id="worthless" name="worthless">
+            <option value="لا أبدا">لا أبدا</option>
+            <option value="نادرا">نادرا</option>
+            <option value="أحيانا">أحيانا</option>
+            <option value="كثيرا">كثيرا</option>
+        </select>
+        <label for="relationships">كيف تشعر حيال العلاقات الاجتماعية والاتصالات مع الآخرين؟</label>
+        <select id="relationships" name="relationships">
+            <option value="أشعر بالارتياح">أشعر بالارتياح</option>
+            <option value="أشعر بالانزعاج من بعض العلاقات">أشعر بالانزعاج من بعض العلاقات</option>
+            <option value="أشعر بالانفصال وعدم التواصل">أشعر بالانفصال وعدم التواصل</option>
+            <option value="أجد صعوبة في التفاعل مع الآخرين">أجد صعوبة في التفاعل مع الآخرين</option>
+        </select>
+        <label for="sleep">كيف تصف نومك في الفترة الأخيرة؟</label>
+        <select id="sleep" name="sleep">
+            <option value="نوم هادئ ومريح">نوم هادئ ومريح</option>
+            <option value="نوم متقطع">نوم متقطع</option>
+            <option value="صعوبة في النوم">صعوبة في النوم</option>
+            <option value="زيادة في النوم أو نوبات نوم غير منتظمة">زيادة في النوم أو نوبات نوم غير منتظمة</option>
+        </select>
+        <label for="satisfaction">ما مدى رضاك عن حياتك بشكل عام حاليًا؟</label>
+        <select id="satisfaction" name="satisfaction">
+            <option value="راض جدا">راض جدا</option>
+            <option value="راض إلى حد ما">راض إلى حد ما</option>
+            <option value="غير راض">غير راض</option>
+            <option value="غير راض على الإطلاق">غير راض على الإطلاق</option>
+        </select>
+        <label for="note">بماذا أناديك:</label>
+        <textarea id="note" name="note" placeholder=" هذه البيانات تبقى سرية "></textarea>
+        <button onclick="copySurvey()">نسخ الاستبيان</button>
+        <a href="https://www.instagram.com/psychiatrist_oman?igsh=MW9zNjgzMHgxazVvcQ%3D%3D&utm_source=qr" class="button"><i class="fab fa-instagram"></i> تحدث معي على Instagram</a>
+    </section>
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024</p>
+    </footer>
+</body>
+</html>
